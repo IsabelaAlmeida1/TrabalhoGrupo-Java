@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+class Carro {
+    private String modelo;
+    private double velocidade;
+
+    public Carro(String modelo, double velocidade) {
+        this.modelo = modelo;
+        this.velocidade = velocidade;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public double getVelocidade() {
+        return velocidade;
+    }
+
+    public void setVelocidade(double velocidade) {
+        this.velocidade = velocidade;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o modelo do carro: ");
+        String modelo = sc.nextLine();
+
+        System.out.print("Digite a velocidade: ");
+        double velocidade = sc.nextDouble();
+
+        Carro carro = new Carro(modelo, velocidade);
+
+        System.out.println("\nModelo: " + carro.getModelo());
+        System.out.println("Velocidade: " + carro.getVelocidade());
+
+        System.out.print("\nDigite nova velocidade: ");
+        double novaVelocidade = sc.nextDouble();
+        carro.setVelocidade(novaVelocidade);
+
+        System.out.println("Velocidade atualizada: " + carro.getVelocidade());
+
+        sc.close();
+    }
+}
