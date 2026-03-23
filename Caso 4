@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+class Celular {
+    private String marca;
+    private int volume;
+
+    public Celular(String marca, int volume) {
+        this.marca = marca;
+        this.volume = volume;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite a marca: ");
+        String marca = sc.nextLine();
+
+        System.out.print("Digite o volume: ");
+        int volume = sc.nextInt();
+
+        Celular celular = new Celular(marca, volume);
+
+        System.out.println("Marca: " + celular.getMarca());
+        System.out.println("Volume: " + celular.getVolume());
+
+        sc.close();
+    }
+}
