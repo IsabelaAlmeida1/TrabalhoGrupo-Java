@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+class Aluno {
+    private String nome;
+    private double media;
+
+    public Aluno(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getMedia() {
+        return media;
+    }
+
+    public void calcularMedia(double[] notas) {
+        double soma = 0;
+
+        for (int i = 0; i < notas.length; i++) {
+            soma += notas[i];
+        }
+
+        this.media = soma / notas.length;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o nome do aluno: ");
+        String nome = sc.nextLine();
+
+        Aluno aluno = new Aluno(nome);
+
+        double[] notas = new double[3];
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Digite a nota " + (i + 1) + ": ");
+            notas[i] = sc.nextDouble();
+        }
+
+        aluno.calcularMedia(notas);
+
+        System.out.println("\nAluno: " + aluno.getNome());
+        System.out.println("Média: " + aluno.getMedia());
+
+        sc.close();
+    }
+}
